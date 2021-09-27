@@ -1,0 +1,50 @@
+---
+title: "Git Test"
+author: "Maddie Banyas"
+date: "`r format(Sys.Date(), '%B %d, %Y')`"
+csl: apa2.csl
+bibligraphy: refs.bib
+output: 
+  html_document:
+    toc: TRUE
+    toc_float: TRUE
+    number_sections: TRUE
+    code_folding: show
+    code_download: TRUE #adds option to download the rmd
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+# R Markdown
+
+This is an R Markdown document. Markdown is a simple formatting syntax for authoring HTML, PDF, and MS Word documents. For more details on using R Markdown see <http://rmarkdown.rstudio.com>.
+
+When you click the **Knit** button a document will be generated that includes both content as well as the output of any embedded R code chunks within the document. You can embed an R code chunk like this: @becton2014generational
+
+```{r cars}
+summary(cars)
+```
+
+## Including Plots {.tabset .tabset-fade .tabset-pills}
+
+You can also embed plots, for example:
+
+```{r pressure, echo=FALSE, results='asis'}
+cat("### Pressure vs Temp {-} \n \n") #explicitly naming the tab
+plot(pressure) #the plot of interest
+cat("\n \n") #adding two line breaks after the plot
+
+cat("### Hist of Temp {-} \n \n")
+hist(pressure$temperature)
+cat("\n \n")
+
+cat("### Hist of Pressure {-} \n \n")
+hist(pressure$pressure)
+cat("\n \n")
+```
+
+#References {-}
+
+Note that the `echo = FALSE` parameter was added to the code chunk to prevent printing of the R code that generated the plot.
